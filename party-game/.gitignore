@@ -1,0 +1,7 @@
+node_modules/
+.next/
+dist/
+server/uploads/*
+!server/uploads/.gitkeep
+.env
+*.log

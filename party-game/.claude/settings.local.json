@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test:*)",
+      "Bash(chmod:*)",
+      "Bash(/Users/julianwidmer/Desktop/PersonalJackbox/party-game/start-network.sh:*)",
+      "Bash(grep -r \"host\\\\|hostGame\\\\|createRoom\\\\|socket\" /Users/julianwidmer/Desktop/PersonalJackbox/party-game/client/src --include=*.tsx --include=*.ts -l)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

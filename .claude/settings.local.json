@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next build:*)",
+      "Bash(timeout 5 npx tsx:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(xargs ls:*)",
+      "Bash(lsof -i :3000 -sTCP:LISTEN)",
+      "Bash(ps -p 18215 -o command=)",
+      "Bash(kill 18215)",
+      "Bash(node -e \":*)"
+    ]
+  }
+}

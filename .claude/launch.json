@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Client (Next.js)",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "LOCAL_IP=$(ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' | head -n 1) && export SERVER_URL=http://$LOCAL_IP:3001 && export NEXT_PUBLIC_SERVER_URL=http://$LOCAL_IP:3001 && cd party-game && npm run dev:client"],
+      "port": 3000
+    },
+    {
+      "name": "Server (Express + Socket.io)",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "LOCAL_IP=$(ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' | head -n 1) && export CLIENT_URL=http://$LOCAL_IP:3000 && cd party-game && npm run dev:server"],
+      "port": 3001,
+      "autoPort": false
+    }
+  ]
+}
