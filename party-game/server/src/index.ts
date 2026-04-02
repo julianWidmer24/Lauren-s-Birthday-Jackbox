@@ -20,9 +20,16 @@ import { store } from './store/MemoryStore';
 // Config
 const PORT = parseInt(process.env.PORT || '3001', 10);
 
-// Allow any localhost or private-network origin (safe for a LAN party game)
+// Allowed origins: production domains (via env var) + any localhost/private-network (for LAN play)
+const ALLOWED_HOSTS = (process.env.ALLOWED_ORIGINS || '')
+  .split(',')
+  .map(s => s.trim())
+  .filter(Boolean);
+
 function isAllowedOrigin(origin: string | undefined): boolean {
   if (!origin) return true;
+  // Check explicit allowed origins (production domains)
+  if (ALLOWED_HOSTS.some(allowed => origin.includes(allowed))) return true;
   try {
     const url = new URL(origin);
     const host = url.hostname;

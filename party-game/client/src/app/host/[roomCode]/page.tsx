@@ -214,7 +214,7 @@ function HostLobby({
         {/* Room code display */}
         <div className="text-center space-y-2">
           <p className="text-2xl select-none">{'\u{1F33F}\u{1F338}\u{1F33F}'}</p>
-          <p className="text-white/60 text-lg">Join at <span className="text-white font-semibold">localhost:3000/play</span></p>
+          <p className="text-white/60 text-lg">Join at <span className="text-white font-semibold">{process.env.NEXT_PUBLIC_GAME_URL || 'localhost:3000/play'}</span></p>
           <div className="room-code">{roomCode}</div>
           <p className="text-white/40 text-sm">Enter this code on your phone</p>
         </div>
